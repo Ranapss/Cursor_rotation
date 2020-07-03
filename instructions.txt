@@ -1,0 +1,43 @@
+Instructions
+
+These are instructions on how to change things, but to simply run the experiment you only need to edit lines 82-85 between runs. 
+
+
+-Open final.py in psychopy coder view (or record_all.py if you want to record the error trials as well, in which case there is an added column called Hit where if there was a hit it will say yes. Line numbers may be alittle different in this file)
+
+- In line 40 (originPath='C:\\Users\\Rana\\Documents\\My stuff\\sanghoon\\rana_lastrun.py',) change the path to where the file is stored 
+
+- Joystick backend has to match the window to work 
+
+- line 78, change the value of smooth to change how many reading are averaged when smoothing 
+
+- line 79-80, multipliers for the joystick axis. If you change joysticks, you may have to change the sign on
+one of these 
+
+- *** lines 82-84, all these arrays should stay the same length. sets is the number of block of 8 that are run, so sets * 8 = the number of trials. angles changes the angle roation for the visual rotation trial. distort can be either true or false, if its true you you will do the visual field disturbance experiment. To run the visual rotation experiment all the values in distort need to be false. 
+
+- *** line 85, changing between true or false changes wheter the forcesensor or joystick is used.
+
+-line 117 and 118. These 'calibrate' the force sensor. The bias is the value when there is no forces acting on the force sensor. To get the sensitivity you just write b('p') to the sensor. This can all be done in test.py which you'll need to open in an IDE like visual studio code. 
+
+-lines 211 and 212, change the number to change sensitivity but dont change the sign
+
+- line 389, targets is the list of targets written in degrees. If you add any then the size of the block changes from 8 and you will have to change some code in the data analysis
+
+-line 510, the set_target function has an argument for the radius of where the targets apear. Dont forget to change the radius in the other locations as well  
+
+- line 549, t - trial_clock.getTime() < 0.1 , change the number to set how soon you have to move to get a too soon error. Here you will get an error if you move before 0.1 seconds. 
+
+- line 555,  t - trial_clock.getTime() > 0.5 , change the number to set how long you have to move before getting a too slow error. Here you have 0.5 seconds to move from the center circle.
+
+line 563, t - trial_clock.getTime() > 0.9, change the number for the amount of time you have to reach the target. 
+
+- all the times are linked so the participant has a total 0.9 seconds from when the target point shows up. If you increase the time participants have before they get too slow then they have less time to reach the edge. 
+
+
+- line 577, r > 0.9, change when the cursor sets the endpoint. AKA the radius of the entire trial, dont forget to change the radius in set_target() and the raidus of the entire green circle.
+
+line 591, r> 1.05, the radius at which the cursur goes out of bounds. 
+
+
+- press the green button on top to run. 
